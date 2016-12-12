@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!-- CODING CHALLENGE: simple game -->
+<!-- winner = player with highest value of height (in cm) + 5 * player's age -->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Section 2: JavaScript Language Basics</title>
+    </head>
+
+    <body>
+        <h1>Section 2: JavaScript Language Basics</h1>
+    </body>
+
+    <script>
+      // set vars
+      var heightJohn = 100;
+      var heightMike = 100;
+      var heightJane = 100;
+
+      var ageJohn = 20;
+      var ageMike = 20;
+      var ageJane = 20;
+
+      // calculate scores
+      var scoreJohn = heightJohn + 5 * ageJohn;
+      var scoreMike = heightMike + 5 * ageMike;
+      var scoreJane = heightJane + 5 * ageJane;
+
+        // determine winner
+        if (scoreMike > scoreJohn && scoreMike > scoreJane) {
+          console.log('Mike wins the game with ' + scoreMike + ' points');
+        }
+        else if (scoreJohn > scoreMike && scoreJohn > scoreJane) {
+          console.log('John wins the game with ' + scoreJohn + ' points');
+        }
+        else if (scoreJane > scoreJohn && scoreJane > scoreMike ) {
+          console.log('Jane wins the game with ' + scoreJane + ' points');
+        }
+
+        // draw between 2 players
+        else if (scoreJohn === scoreMike && scoreJohn > scoreJane) {
+          console.log('It\'s a draw between John and Mike with ' + scoreJohn + ' points each!');
+        }
+        else if (scoreJane === scoreMike && scoreJane > scoreJohn) {
+          console.log('It\'s a draw between Jane and Mike with ' + scoreJane + ' points each!');
+        }
+        else if (scoreJane === scoreJohn && scoreJane > scoreMike) {
+          console.log('It\'s a draw between Jane and John with ' + scoreJane + ' points each!');
+        }
+
+        // draw between everybody
+        else if (scoreJohn === scoreMike && scoreMike === scoreJane){
+          console.log('It\'s a draw between everyone with ' + scoreJohn + ' points each!');
+        }
+    </script>
+</html>
