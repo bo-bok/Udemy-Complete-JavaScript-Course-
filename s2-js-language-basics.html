@@ -76,6 +76,30 @@
     /* *** Lecture: operators *** */
 
 
+    // we need to use this year more than once. Therefore let's make a variable
+    var now = 2016;
+    var birthYear = now - 24;
+
+    // operator presedence: MDN table, higher the number, higher the presedence
+
+    // 2016 - 48
+    birthYear = now - 24 * 2;
+    console.log(birthYear);
+
+    var ageJohn = 30;
+    var ageMark = 30;
+
+    git// we can assign the value of one variable to another, and declare the value at the same time. Thank you right-left execution! 
+    ageJohn = ageMark = (3 + 5) * 4 - 6;
+
+    ageJohn++;
+    ageMark *= 2;
+
+    console.log(ageJohn);
+    console.log(ageMark);
+
+
+
     /* ========================================================= */
 
 
