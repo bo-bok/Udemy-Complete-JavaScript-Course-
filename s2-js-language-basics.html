@@ -104,6 +104,34 @@
     /* *** Lecture: if/else statements *** */
 
 
+    var name = 'Jessica';
+    var age = 24;
+    var isMarried = false;
+
+    if(isMarried !== false) {
+      // good example of subtle difference between false and !==(not)false
+      console.log(name + ' is married')
+    } else {
+      console.log(name + ' is not married');
+    }
+
+
+    // on type coercion and == vs ===:
+    // == does type coercion
+    // === does not
+    if (23 == "23") {
+      console.log('something to print...');
+    }
+    // js thinks these are the same thing because of type coercion
+
+    if (23 === "23") {
+      console.log('something to print...');
+    }
+    // does not do type coercion, so they not the same thing, these are effectively false
+
+    // to avoid difficult to fix bugs, use ===
+
+
 
 
 
