@@ -38,11 +38,17 @@
     var name = 'Jessica';
     var age = 24;
 
+    // JS is going to coerce the age var to a string in this case
+    console.log(name + ' ' + age);
 
-    // can declare vars without immediately defining them
+    // JS will simply add these numbers, and will be number not string
+    console.log(age + age);
+
+
+    // we can also declare vars without immediately defining them
     var job, isMarried;
 
-    // then we can define them
+    // then we can define them later
     job = 'web developer';
     isMarried = false;
 
@@ -50,13 +56,14 @@
     console.log(name + ' is a ' + age + ' year old ' + job + '. Is she married? ' + isMarried + '.');
 
 
-    // change the value of these vars
+    // reassign the value of these vars
     age = 'thirty six';
     job = 'driver';
 
     // see how these values have now changed/ been redefined
     console.log(name + ' is a ' + age + ' year old ' + job + '. Is she married? ' + isMarried + '.');
 
+    // for getting data from the console. Prompt & alert are for debugging or test something in early stages of development 
     //  var lastName = prompt('what is the last name?');
 
     //  console.log(lastName);
