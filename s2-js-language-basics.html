@@ -171,7 +171,61 @@
     /* ========================================================= */
 
     /* *** Lecture: Functions *** */
-    
+
+    function birthYear(currentYear, age){
+      console.log(currentYear - age);
+    }
+    // call
+    birthYear( 2016, 24);
+
+    // my way at function declaration
+    function myCalculateAge(currentYear, birthYear){
+      console.log(currentYear - birthYear);
+    }
+    // call
+    myCalculateAge (2016, 1992);
+
+
+
+    // his way of function declaration
+    function calculateAge (yearOfBirth) {
+      var age = 2016 - yearOfBirth;
+      return age;
+    }
+
+    // this is how we store it. Stores the output to the new variable
+    var ageJessica = calculateAge(1992);
+    console.log(ageJessica)
+
+
+    var ageMike = calculateAge(1994);
+    console.log(ageMike);
+
+
+    // function that tells us how many years we have left until retirement
+    // functions don't always have to return something
+    // functions can call other functions
+    function yearsUntilRetirement(name, birthYear) {
+
+      var age = calculateAge(birthYear);
+      var retirement = 65 - age;
+
+        if (retirement > 0) {
+          console.log(name + ' retires in ' + retirement + ' years.');
+        }
+        else if (retirement < 0) {
+          console.log(name + ' has been retired for ' + Math.abs(retirement) + ' years');
+        }
+        else {
+          console.log(name + ' has retired within the last year.');
+        }
+
+    }
+
+    // call function
+    yearsUntilRetirement('John', 1990);
+    yearsUntilRetirement('Mike', 1969);
+    yearsUntilRetirement('Jane', 1948);
 
     /* ========================================================= */
 
