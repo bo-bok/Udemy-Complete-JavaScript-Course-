@@ -264,7 +264,38 @@
 
     /* *** Lecture: Arrays *** */
 
-    
+    var names = ['John', 'Jane', 'Mike'];
+    var years = new Array (1990, 1969, 1948);
+
+
+    console.log(names[1]);
+    names[1] = 'Ben';
+    console.log(names);
+
+    var john = ['John', 'Smith', 1990, 'designer', false]
+
+    john.push('blue');
+
+    console.log(john);
+
+    john.unshift('Mr.');
+    console.log(john);
+
+    john.pop();
+    console.log(john);
+
+    john.shift();
+    console.log(john);
+
+    var johnindex = john.indexOf('Smith');
+    console.log(johnindex);
+    // most important use case of indexOf = to find out if a certain element is or is not in an array
+
+
+    if (john.indexOf('teacher') === -1) {
+      console.log('John is not a teacher');
+    }
+
     /* ========================================================= */
 
 
