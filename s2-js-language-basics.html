@@ -398,6 +398,58 @@
 
     /* *** Lecture: Loops and Iterations *** */
 
+    for (var i = 0; i <= 10; i++){
+      if (i > 0) {
+        console.log(i);
+      }
+    }
+
+    var names = ['john', 'jane', 'mary', 'mark', 'bob', 'sandra'];
+
+    for (var i = 0; i < names.length; i++) {
+      console.log(names[i]);
+    }
+
+    // print out a certain number (other way around)
+    for (var i = names.length - 1; i >= 0; i--) {
+      console.log(names[i]);
+    }
+
+
+    // while loops
+    // only has the condition which is evaluated before each loops
+
+    /*
+    var names = ['john', 'jane', 'mary', 'mark', 'bob', 'sandra'];
+
+    var i = 0;
+    while (i < names.length) {
+      console.log(names[i]);
+      i++;
+    }
+
+    // break and continue (statement)
+    // break = is to break out of a loop
+    // continue = quit current iteration of the loop, and continue with the next one
+
+    for (var i = 1; i <= 5; i++) {
+      console.log(i);
+
+      if (i === 3){
+        break;
+      }
+    }
+
+
+    for (var i = 1; i <= 5; i++) {
+
+      if (i === 3){
+        continue;
+      }
+      // 3 gets skips (basi example, not real world )
+
+      console.log(i);
+
     /* ========================================================= */
 
     </script>
