@@ -264,34 +264,48 @@
 
     /* *** Lecture: Arrays *** */
 
+
+    // a way of bundling various info into one variable
     var names = ['John', 'Jane', 'Mike'];
     var years = new Array (1990, 1969, 1948);
 
-
+    // access an index of an array
     console.log(names[1]);
+
+    // mutate a value in an array
     names[1] = 'Ben';
     console.log(names);
 
+
+    // array methods
     var john = ['John', 'Smith', 1990, 'designer', false]
 
+    // PUSH adds element to end of array
     john.push('blue');
-
     console.log(john);
 
+    // UNSHIFT adds element to start of array
     john.unshift('Mr.');
     console.log(john);
 
+    // POP accepts no parameters. Takes the last element from an array and returns the removed value
     john.pop();
     console.log(john);
 
+    // SHIFT accepts no paramaters. Removes first element.
     john.shift();
     console.log(john);
 
-    var johnindex = john.indexOf('Smith');
-    console.log(johnindex);
+    // VERY USEFUL = indexOf
+    // returns the position of the element that we pass into it.
+    var johnIndex = john.indexOf('Smith');
+    console.log(johnIndex);
+
     // most important use case of indexOf = to find out if a certain element is or is not in an array
 
+    // if element is not in the array, indexOF method will return -1
 
+    // this is the beauty/ horror of JS
     if (john.indexOf('teacher') === -1) {
       console.log('John is not a teacher');
     }
