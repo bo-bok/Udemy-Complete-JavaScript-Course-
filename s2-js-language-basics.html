@@ -359,12 +359,38 @@
 
     /* *** Lecture: Objects and Methods *** */
 
+    // objects can hold different type of data
+    // objects can hold other objects, arrays and functions (methods)
+
+    var john = {
+      name: 'John',
+      lastName: 'Smith',
+      yearOfBirth: 1990,
+      job: 'teacher',
+      isMarried: false,
+      family: ['Jane', 'Mark', 'Bob'],
+      calculateAge: function() {
+        // return 2016 - this.yearOfBirth;
+        // this, means john because it's this object
+
+        this.age = 2016 - this.yearOfBirth;
+        // when we call this method create a new var or property inside john object called age and then calculate this value and assign it to this variable
+      }
+    };
+    john.calculateAge();
+    console.log(john);
+
+    // console.log( john.calculateAge() );
+    //
+    // var age = john.calculateAge();
+    // // age the variable to the object
+    // john.age = age;
+    //
+    // console.log(john);
+
 
     /* ========================================================= */
 
 
-
-    // objects can hold different type of data
-    // objects can hold other objects, arrays and functions (methods)
     </script>
 </html>
