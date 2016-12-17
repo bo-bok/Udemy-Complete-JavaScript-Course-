@@ -11,7 +11,7 @@
 
     <script>
 
-    /*
+
 
     // 1. create an array with some years that people were born in.
     var yearOfBirth = [1960, 1970, 1980, 1990, 2000, 2010];
@@ -19,37 +19,39 @@
     console.log(yearOfBirth);
 
     // 2. create empty array to store age
-    var age = [];
-    console.log(age);
+    var ages = [];
+    console.log(ages);
 
     // 3. use a loop to fill the array with the ages of the persons
     for (var i = 0; i < yearOfBirth.length; i++) {
 
       var currentYear = 2017;
 
-      console.log(age.push(currentYear - yearOfBirth[i]));
+      console.log(ages.push(currentYear - yearOfBirth[i]));
+
+      // alt method: ages[i] = 2016 - years[i];
     }
 
     // 4. use another loop to log into the console whether each person is of full age (18 +), as well as their age
-    for (var i = 0; i < age.length; i++) {
+    for (i = 0; i < ages.length; i++) {
 
       var fullAge = true;
 
-      if (age[i] >= 18) {
-        console.log(fullAge + ' ' + age[i]);
+      if (ages[i] >= 18) {
+        console.log('Person is ' + ages[i] + ' years old, and is of full age');
       } else {
-        console.log(!fullAge + ' ' + age[i]);
+        console.log('Person is ' + ages[i] + ' years old, and is NOT of full age');
       }
 
     }
 
-    */
+
 
     // 5. Finally, create a function called printFullAge which recieves a vector of years as an argument, executes the steps2, 3 and 4, and returns a vector of true/false boolean values. True if person > 18 years, false if not.
 
     // var years = [1990, 1980, 1970, 1960];
     // console.log(years);
-
+/*
     function printFullAge(years){
       // empty arrays to store age and years
       var age = [];
@@ -65,13 +67,15 @@
 
           // boolean var to denote if person is over the legal age
           var fullAge = [];
+          for (var i = 0; i < age.length; i++) {
 
-          if (age[i] >= 18) {
-            fullAge.push(true);
-          } else {
-            fullAge.push(false);
-          }
-          console.log(fullAge);
+            if (age[i] >= 18) {
+              fullAge.push(true);
+            } else {
+              fullAge.push(false);
+            }
+            console.log(fullAge);
+            }
         }
 
       }
@@ -79,7 +83,7 @@
 
     var full_1 = printFullAge([2010, 2000, 1990, 1980, 1970, 1960]);
     var full_2 = printFullAge([1960, 1970, 1980, 1990, 2000, 2010]);
-
+*/
     /* note: at the end of my solution, it successfully passed the years array to the function and returned a value of true/ false depending on whether a person is over 18 or not. However, each true/ false output was outputted as a seperate array*/
 
     </script>
