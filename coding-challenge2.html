@@ -20,17 +20,18 @@
     console.log(age);
 
     // 3. use a loop to fill the array with the ages of the persons
-    var currentYear = 2017;
-
     for (var i = 0; i < yearOfBirth.length; i++) {
+
+      var currentYear = 2017;
+
       console.log(age.push(currentYear - yearOfBirth[i]));
     }
 
     // 4. use another loop to log into the console whether each person is of full age (18 +), as well as their age
-
-    var fullAge = true;
-
     for (var i = 0; i < age.length; i++) {
+
+      var fullAge = true;
+
       if (age[i] >= 18) {
         console.log(fullAge + ' ' + age[i]);
       } else {
