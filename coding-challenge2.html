@@ -11,9 +11,21 @@
 
     <script>
     // 1. create an array with some years that people were born in.
-    var yearOfBirth = [1960, 1970, 1980, 1990, 2000, 2010]
+    var yearOfBirth = [1960, 1970, 1980, 1990, 2000, 2010];
 
-    // 2. create empty array
-    var array = [];
+    console.log(yearOfBirth);
+
+    // 2. create empty array to store age
+    var age = [];
+    console.log(age);
+
+    // 3. use a loop to fill the array with the ages of the persons
+    var currentYear = 2017;
+
+    for (var i = 0; i < yearOfBirth.length; i++) {
+      console.log(age.push(currentYear - yearOfBirth[i]));
+    }
+
+
     </script>
 </html>
