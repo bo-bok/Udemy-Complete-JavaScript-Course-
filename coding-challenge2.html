@@ -26,21 +26,18 @@
     for (var i = 0; i < yearOfBirth.length; i++) {
 
       var currentYear = 2017;
-
       console.log(ages.push(currentYear - yearOfBirth[i]));
 
-      // alt method: ages[i] = 2016 - years[i];
+      // alt method: ages[i] = 2016 - yearOfBirth[i];
     }
 
     // 4. use another loop to log into the console whether each person is of full age (18 +), as well as their age
     for (i = 0; i < ages.length; i++) {
 
-      var fullAge = true;
-
       if (ages[i] >= 18) {
-        console.log('Person is ' + ages[i] + ' years old, and is of full age');
+        console.log('Person ' + i + ' is ' + ages[i] + ' years old, and is of full age');
       } else {
-        console.log('Person is ' + ages[i] + ' years old, and is NOT of full age');
+        console.log('Person ' + i + ' is ' + ages[i] + ' years old, and is NOT of full age');
       }
 
     }
