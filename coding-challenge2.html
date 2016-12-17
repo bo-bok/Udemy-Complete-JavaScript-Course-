@@ -2,17 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Section 2: JavaScript Language Basics</title>
+        <title>Coding Challenge 2</title>
     </head>
 
     <body>
-        <h1>Section 2: JavaScript Language Basics</h1>
+        <h1>Coding Challenge 2</h1>
     </body>
 
     <script>
 
 
-
+/*
+    // preliminary steps
     // 1. create an array with some years that people were born in.
     var yearOfBirth = [1960, 1970, 1980, 1990, 2000, 2010];
 
@@ -32,6 +33,7 @@
     }
 
     // 4. use another loop to log into the console whether each person is of full age (18 +), as well as their age
+
     for (i = 0; i < ages.length; i++) {
 
       if (ages[i] >= 18) {
@@ -41,47 +43,48 @@
       }
 
     }
-
+*/
 
 
     // 5. Finally, create a function called printFullAge which recieves a vector of years as an argument, executes the steps2, 3 and 4, and returns a vector of true/false boolean values. True if person > 18 years, false if not.
 
-    // var years = [1990, 1980, 1970, 1960];
-    // console.log(years);
-/*
     function printFullAge(years){
       // empty arrays to store age and years
-      var age = [];
-      console.log(age);
+      var ages = [];
+      var fullAges = [];
+
+      console.log(ages);
 
         // push a persons age to the age array
         for (var i = 0; i < years.length; i++) {
 
           var currentYear = 2017;
-
-          console.log(age.push(currentYear - years[i]));
-
-
-          // boolean var to denote if person is over the legal age
-          var fullAge = [];
-          for (var i = 0; i < age.length; i++) {
-
-            if (age[i] >= 18) {
-              fullAge.push(true);
-            } else {
-              fullAge.push(false);
-            }
-            console.log(fullAge);
-            }
+          console.log(ages.push(currentYear - years[i]));
         }
 
+        // return a sentence that denotes if a person is of legal age, and store a true/false value in an array
+          for (var i = 0; i < ages.length; i++) {
+
+            if (ages[i] >= 18) {
+              console.log('Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is of full age');
+              fullAges.push(true);
+            } else {
+              console.log('Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is NOT of full age');
+              fullAges.push(false);
+            }
+
+          }
+
+          return fullAges;
       }
 
 
     var full_1 = printFullAge([2010, 2000, 1990, 1980, 1970, 1960]);
     var full_2 = printFullAge([1960, 1970, 1980, 1990, 2000, 2010]);
-*/
-    /* note: at the end of my solution, it successfully passed the years array to the function and returned a value of true/ false depending on whether a person is over 18 or not. However, each true/ false output was outputted as a seperate array*/
+
+    /* note: at the end of my solution, it successfully passed the years array to the function and returned a value of true/ false depending on whether a person is over 18 or not. However, each true/ false output was outputted as a seperate array */
+
+    /* work has been updated with help of the solution video and now pushes to a single array, as requested*/
 
     </script>
 </html>
