@@ -22,14 +22,20 @@
     JS behind the scenes:
       - the environment has some sort of JS engine, a programme that executes JS code
       - step 1: our code is parsed by a parser. Reads the code line by line and checks it's correct. That means it must know the JS rules, and if our code is incorrect it will stop the execution and throw and error.
-      - step 2: if our code passes the parsers requirements for valid JS, our engine produces a data structure known as the 'Abstract Syntax Tree'.
+      - step 2: if our code passes the parser's requirements for valid JS, our engine produces a data structure known as the 'Abstract Syntax Tree'.
       - step 3: the Abstract Syntax Tree translates our code into machine code. At this point, our code is no longer JS code, but a code/ set of instructions that can be executed directly by the computers processor
       - step 4: the code runs and does its work
   */
-  
+
     /* ========================================================= */
 
+
     /*  *** 28. Execution Contexts and the Execution Stack ***  */
+
+  /*
+    The order in which things are run = the execution context
+
+  */
 
     /* ========================================================= */
 
@@ -39,6 +45,7 @@
 
     /*  *** 30. Hoisting in Practice ***  */
 
+    
     /* ========================================================= */
 
     /*  *** 31. Scoping and the Scope Chain ***  */
