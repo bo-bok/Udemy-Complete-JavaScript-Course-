@@ -58,7 +58,7 @@ document.querySelector('#current-' + activePlayer).textContent = dice;
   // read something from the webpage and then store it in some variable, e.g.
 var x = document.querySelector('#score-0').textContent;
 console.log(x);
-
+// test
 
 
 
