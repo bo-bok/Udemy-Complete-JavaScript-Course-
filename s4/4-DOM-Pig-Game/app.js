@@ -187,6 +187,7 @@ function nextPlayer(){
     document.querySelector('.dice').style.display = 'none';
 }
 
+/* *** 43. Lecture: Creating a Game Initialization Function *** */
 
 
 
