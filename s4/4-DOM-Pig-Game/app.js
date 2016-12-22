@@ -65,3 +65,10 @@ console.log(x);
 // - how to change CSS styles
 document.querySelector('.dice').style.display = 'none';
 // hide the dice image
+
+
+
+
+
+
+/* *** 40. Lecture: Events and Event Handling: Rolling the Dice *** */
