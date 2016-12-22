@@ -13,7 +13,7 @@ GAME RULES:
 /* *** 39. Lecture: The DOM and DOM Manipulation *** */
 // - how to create our fundemental game Variables
 
-  var scores, roundScore, activePlayer, dice;
+  var scores, roundScore, activePlayer;
   scores = [0,0];
   // this is cleaner than setting a score var for each player
   roundScore = 0;
@@ -21,9 +21,15 @@ GAME RULES:
   activePlayer = 1;
   // 0 will be 1st player and 1 will be 2nd player. 0 will read from first element in scores array, and 1 from the second
 
+  // set start scores to zero
+  document.getElementById('score-0').textContent = '0';
+  document.getElementById('score-1').textContent = '0';
+  document.getElementById('current-0').textContent = '0';
+  document.getElementById('current-1').textContent = '0';
+
 
 // - how to generate a random number (for dice)
-  dice = Math.floor(Math.random() * 6) + 1;
+  // dice = Math.floor(Math.random() * 6) + 1;
 
   /*
     // random number creation explained:
@@ -43,7 +49,7 @@ GAME RULES:
 // querySelector() only the selects the first thing it finds, but there's a workaround for that. Selects in same way as JS.
 // textContent updates the content
 
-document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).textContent = dice;
 // update score based on active player (0 or 1)
 
 // document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
@@ -58,8 +64,6 @@ document.querySelector('#current-' + activePlayer).textContent = dice;
   // read something from the webpage and then store it in some variable, e.g.
 var x = document.querySelector('#score-0').textContent;
 console.log(x);
-// test
-
 
 
 // - how to change CSS styles
@@ -72,3 +76,51 @@ document.querySelector('.dice').style.display = 'none';
 
 
 /* *** 40. Lecture: Events and Event Handling: Rolling the Dice *** */
+
+// METHOD 1 for event handling. Function declaration and callback
+
+// select the element in which the event will happen & add an event listener
+
+// document.querySelector('.btn-roll').addEventListener('click', btn);
+// two arguments: arg 1 = type of event | arg 2 = the function that will be called as soon as the event happens
+
+// function btn() {}
+
+/* we don't use the function call's parentheses here. This is because we don't want to call the function right here, we want the event listener to call the function for us. Thus, the function we want to call after the event handler has been trigged is called the callback function. This is because it's a function that is not called by us, but by another function. */
+
+// callback function = a function that we pass into another function as an argument. Then this function (in our example the event listener method, will call said function for us)
+
+
+
+// METHOD 2: annoymous function
+
+  // BUT: what if we didn't want an external function that gets called by the event listener?
+  // we could write our function in the parentheses, and this would be an anonymous function (function w/o a name, that cannot be reused):
+  document.querySelector('.btn-roll').addEventListener('click', function(){
+    // do something here
+
+    // 1. Random number
+    var dice = Math.floor(Math.random() * 6) + 1;
+
+    // 2. display result
+
+      // a. display dice image
+      var diceDOM = document.querySelector('.dice');
+      diceDOM.style.display = 'block';
+
+       // b. display correct dice image
+      diceDOM.src = 'dice-' + dice + '.png';
+
+    document.querySelector('#current-' + activePlayer).textContent = dice;
+
+    // 3. update the round score IF the rolled number was NOT a 1
+
+
+    // if (dice !== 0) {
+    //   roundScore += dice;
+    // }
+
+  });
+
+
+  // getElementByID - only works for ID, but faster than querySelector
