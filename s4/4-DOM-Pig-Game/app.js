@@ -129,40 +129,63 @@ document.querySelector('.dice').style.display = 'none';
     // display it in user interface
     document.querySelector('#current-' + activePlayer).textContent = roundScore;
   } else {
-    // if active player draws a one, we want to change it to next players turn
-    activePlayer === 0 ? activePlayer = 1: activePlayer = 0;
-
-    // reset score to zero
-    roundScore = 0;
-
-    // show reset score in user interface
-    document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-1').textContent = '0';
-
-    // make who is the active player visible in the user interface
-    // the active class gives the active player its dfferent styling
-
-    // document.querySelector('.player-0-panel').classList.remove('active');
-    // document.querySelector('.player-1-panel').classList.add('active');
-
-      // issue with approach - styling will only switch from player 0 to player 1, not from 1 to 0
-
-      // solution? .toggle()
-      document.querySelector('.player-0-panel').classList.toggle('active');
-      document.querySelector('.player-1-panel').classList.toggle('active');
-
-      // remove the 1 so each player has clean space in interface to start rolling dice on
-      document.querySelector('.dice').style.display = 'none';
-
+    // next player
+    nextPlayer();
   }
-
-
-  /* *** 42. Lecture: Implementing Our 'Hold' Function and and the DRY Principle *** */
-
 
 });
 
 
+/* *** 42. Lecture: Implementing Our 'Hold' Function and and the DRY Principle *** */
+
+document.querySelector('.btn-hold').addEventListener('click', function(){
+  // add current score to global score
+  scores[activePlayer] += roundScore;
+
+  // update the UI
+  document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+  // check if player won the game
+  if (scores[activePlayer] >= 20) {
+    document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+    document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+
+  } else {
+  // next player
+  nextPlayer();
+  }
+
+});
+
+
+function nextPlayer(){
+  // if active player draws a one, we want to change it to next players turn
+  activePlayer === 0 ? activePlayer = 1: activePlayer = 0;
+
+  // reset score to zero
+  roundScore = 0;
+
+  // show reset score in user interface
+  document.getElementById('current-0').textContent = '0';
+  document.getElementById('current-1').textContent = '0';
+
+  // make who is the active player visible in the user interface
+  // the active class gives the active player its dfferent styling
+
+  // document.querySelector('.player-0-panel').classList.remove('active');
+  // document.querySelector('.player-1-panel').classList.add('active');
+
+    // issue with approach - styling will only switch from player 0 to player 1, not from 1 to 0
+
+    // solution? .toggle()
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+
+    // remove the 1 so each player has clean space in interface to start rolling dice on
+    document.querySelector('.dice').style.display = 'none';
+}
 
 
 
