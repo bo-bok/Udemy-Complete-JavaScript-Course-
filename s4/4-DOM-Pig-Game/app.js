@@ -13,7 +13,7 @@ GAME RULES:
 /* *** 39. Lecture: The DOM and DOM Manipulation *** */
 // - how to create our fundemental game Variables
 
-  var scores, roundScore, activePlayer;
+  var scores, roundScore, activePlayer, gamePlaying;
 
   // reset the scores to zero, ready to start new game
   init();
@@ -95,7 +95,7 @@ document.querySelector('.dice').style.display = 'none';
   // BUT: what if we didn't want an external function that gets called by the event listener?
   // we could write our function in the parentheses, and this would be an anonymous function (function w/o a name, that cannot be reused):
   document.querySelector('.btn-roll').addEventListener('click', function(){
-    // do something here
+    if (gamePlaying){
 
     // 1. Random number
     var dice = Math.floor(Math.random() * 6) + 1;
@@ -116,7 +116,6 @@ document.querySelector('.dice').style.display = 'none';
 
 
 
-
   /* *** 42. Lecture: Implementing Our 'Hold' Function and and the DRY Principle *** */
   // 3. update the round score IF the rolled number was NOT a 1
 
@@ -129,13 +128,14 @@ document.querySelector('.dice').style.display = 'none';
     // next player
     nextPlayer();
   }
-
+  }
 });
 
 
 /* *** 42. Lecture: Implementing Our 'Hold' Function and and the DRY Principle *** */
 
 document.querySelector('.btn-hold').addEventListener('click', function(){
+  if(gamePlaying){
   // add current score to global score
   scores[activePlayer] += roundScore;
 
@@ -148,12 +148,12 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
     document.querySelector('.dice').style.display = 'none';
     document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
     document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-
+    gamePlaying = false;
   } else {
   // next player
   nextPlayer();
   }
-
+}
 });
 
 
@@ -189,6 +189,9 @@ function nextPlayer(){
 document.querySelector('.btn-new').addEventListener('click', init);
 
 function init(){
+  // set the state back to true
+  gamePlaying = true;
+
   // reset the scores
   scores = [0,0];
   // this is cleaner than setting a score var for each player
@@ -223,66 +226,3 @@ function init(){
 }
 
 /* 44. Lecture: Finishing Touches: State Variables */
-
-
-
-/*  FINAL code
-var scores, roundScore, activePlayer;
-scores = [0,0];
-roundScore = 0;
-activePlayer = 1;
-
-document.querySelector('.dice').style.display = 'none';
-
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
-
-
-document.querySelector('.btn-roll').addEventListener('click', function(){
-
-  var dice = Math.floor(Math.random() * 6) + 1;
-  var diceDOM = document.querySelector('.dice');
-  diceDOM.style.display = 'block';
-
-  diceDOM.src = 'dice-' + dice + '.png';
-
-  document.querySelector('#current-' + activePlayer).textContent = dice;
-
-
-  if (dice !== 1){
-    // add score
-    roundScore += dice;
-    // display it in user interface
-    document.querySelector('#current-' + activePlayer).textContent = roundScore;
-  } else {
-    // if active player draws a one, we want to change it to next players turn
-    activePlayer === 0 ? activePlayer = 1: activePlayer = 0;
-
-    // reset score to zero
-    roundScore = 0;
-
-    // show reset score in user interface
-    document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-1').textContent = '0';
-
-    // make who is the active player visible in the user interface
-    // the active class gives the active player its dfferent styling
-
-    // document.querySelector('.player-0-panel').classList.remove('active');
-    // document.querySelector('.player-1-panel').classList.add('active');
-
-      // issue with approach - styling will only switch from player 0 to player 1, not from 1 to 0
-
-      // solution? .toggle()
-      document.querySelector('.player-0-panel').classList.toggle('active');
-      document.querySelector('.player-1-panel').classList.toggle('active');
-
-      // remove the 1 so each player has clean space in interface to start rolling dice on
-      document.querySelector('.dice').style.display = 'none';
-
-  }
-
-});
-*/
