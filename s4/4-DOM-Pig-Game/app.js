@@ -72,3 +72,7 @@ document.querySelector('.dice').style.display = 'none';
 
 
 /* *** 40. Lecture: Events and Event Handling: Rolling the Dice *** */
+
+// events:
+  //- notifications that are sent to notify the code that something happened in the webpage
+  //- event listener: a function that performs an action based on a certain event. It waits for a specific event to happen 
