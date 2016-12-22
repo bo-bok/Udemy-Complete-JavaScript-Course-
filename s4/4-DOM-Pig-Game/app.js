@@ -157,6 +157,8 @@ document.querySelector('.dice').style.display = 'none';
   }
 
 
+  /* *** 42. Lecture: Implementing Our 'Hold' Function and and the DRY Principle *** */
+
 
 });
 
