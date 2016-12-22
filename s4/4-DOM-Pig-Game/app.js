@@ -14,12 +14,9 @@ GAME RULES:
 // - how to create our fundemental game Variables
 
   var scores, roundScore, activePlayer;
-  scores = [0,0];
-  // this is cleaner than setting a score var for each player
-  roundScore = 0;
-  // there is only 1 round score at a time
-  activePlayer = 0;
-  // 0 will be 1st player and 1 will be 2nd player. 0 will read from first element in scores array, and 1 from the second
+
+  // reset the scores to zero, ready to start new game
+  init();
 
   // set start scores to zero
   document.getElementById('score-0').textContent = '0';
@@ -188,7 +185,49 @@ function nextPlayer(){
 }
 
 /* *** 43. Lecture: Creating a Game Initialization Function *** */
+// when we hit new game button, it should start from beginning
+document.querySelector('.btn-new').addEventListener('click', init);
 
+function init(){
+  // reset the scores
+  scores = [0,0];
+  // this is cleaner than setting a score var for each player
+  roundScore = 0;
+  // there is only 1 round score at a time
+  activePlayer = 0;
+  // 0 will be 1st player and 1 will be 2nd player. 0 will read from first element in scores array, and 1 from the second
+
+  // show reset score in user interface
+  document.getElementById('current-0').textContent = '0';
+  document.getElementById('current-1').textContent = '0';
+
+  document.getElementById('score-0').textContent = '0';
+  document.getElementById('score-1').textContent = '0';
+
+  // reset the names
+  document.getElementById('name-0').textContent = 'Player 1!';
+  document.getElementById('name-1').textContent = 'Player 2!';
+
+
+
+  // change from winning to active styling
+  document.querySelector('.player-0-panel').classList.remove('winner');
+  document.querySelector('.player-1-panel').classList.remove('winner');
+  document.querySelector('.player-0-panel').classList.remove('active');
+  document.querySelector('.player-1-panel').classList.remove('active');
+  document.querySelector('.player-0-panel').classList.add('active');
+
+
+
+  // hide the dice;
+  document.querySelector('.dice').style.display = 'none';
+
+
+
+
+
+
+}
 
 
 
