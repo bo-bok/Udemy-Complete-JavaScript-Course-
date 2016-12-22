@@ -217,18 +217,12 @@ function init(){
   document.querySelector('.player-1-panel').classList.remove('active');
   document.querySelector('.player-0-panel').classList.add('active');
 
-
-
   // hide the dice;
   document.querySelector('.dice').style.display = 'none';
 
-
-
-
-
-
 }
 
+/* 44. Lecture: Finishing Touches: State Variables */
 
 
 
