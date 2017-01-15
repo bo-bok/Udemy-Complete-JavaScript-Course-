@@ -10,6 +10,7 @@ GAME RULES:
 */
 
 
+/* *** 39. Lecture: The DOM and DOM Manipulation *** */
 // - how to create our fundemental game Variables
 
   var scores, roundScore, activePlayer, dice;
@@ -17,13 +18,12 @@ GAME RULES:
   // this is cleaner than setting a score var for each player
   roundScore = 0;
   // there is only 1 round score at a time
-  activePlayer = 0;
+  activePlayer = 1;
   // 0 will be 1st player and 1 will be 2nd player. 0 will read from first element in scores array, and 1 from the second
 
 
 // - how to generate a random number (for dice)
   dice = Math.floor(Math.random() * 6) + 1;
-  console.log(dice);
 
   /*
     // random number creation explained:
@@ -33,11 +33,35 @@ GAME RULES:
       dice = Math.floor(Math.random() * 6) + 1; // all of the above, makes number start at 1 and store the number in the dice var
   */
 
-// - how to manipulate the DOM
 
-document.querySelector('#score-0').textContent = dice;
+
+
+
+// - how to manipulate the DOM
+  // we call this a SETTER - because we SET a value
+// document.querySelector('#current-0').textContent = dice;
 // querySelector() only the selects the first thing it finds, but there's a workaround for that. Selects in same way as JS.
 // textContent updates the content
 
+document.querySelector('#current-' + activePlayer).textContent = dice;
+// update score based on active player (0 or 1)
+
+// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
+// if we want to use html on selected element, we must use innerHTML and pass HTML as string
+
+
+
+
 // - how to read from the DOM
+// we call this a GETTER - because we GET a value
+
+  // read something from the webpage and then store it in some variable, e.g.
+var x = document.querySelector('#score-0').textContent;
+console.log(x);
+
+
+
+
 // - how to change CSS styles
+document.querySelector('.dice').style.display = 'none';
+// hide the dice image
