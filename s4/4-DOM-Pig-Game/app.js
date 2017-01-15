@@ -34,5 +34,10 @@ GAME RULES:
   */
 
 // - how to manipulate the DOM
+
+document.querySelector('#score-0').textContent = dice;
+// querySelector() only the selects the first thing it finds, but there's a workaround for that. Selects in same way as JS.
+// textContent updates the content
+
 // - how to read from the DOM
 // - how to change CSS styles
